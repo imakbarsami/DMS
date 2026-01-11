@@ -23,4 +23,10 @@ class Driver extends Model
         'image',
         'status'
     ];
+
+
+    public function problems()
+    {
+        return $this->hasMany(DriverProblem::class);
+    }
 }
