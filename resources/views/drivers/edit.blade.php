@@ -148,7 +148,7 @@
                                     <input type="file" name="nid_img" class="form-control form-control-file border p-1 mb-2 {{ $errors->has('nid_img') ? 'is-invalid' : '' }}">
                                     @if($driver->nid_img)
                                         <div class="p-2 border rounded bg-light text-center">
-                                            <img src="/images/{{ $driver->nid_img }}" height="80px" class="rounded">
+                                            <img src="/nid/{{ $driver->nid_img }}" height="80px" class="rounded">
                                             <p class="text-muted text-xs mb-0 mt-1">Current NID</p>
                                         </div>
                                     @endif
@@ -162,7 +162,7 @@
                                     <input type="file" name="driving_license_img" class="form-control form-control form-control-file border p-1 mb-2 {{ $errors->has('driving_license_img') ? 'is-invalid' : '' }}">
                                     @if($driver->driving_license_img)
                                         <div class="p-2 border rounded bg-light text-center">
-                                            <img src="/images/{{ $driver->driving_license_img }}" height="80px" class="rounded">
+                                            <img src="/driving-licences/{{ $driver->driving_license_img }}" height="80px" class="rounded">
                                             <p class="text-muted text-xs mb-0 mt-1">Current License</p>
                                         </div>
                                     @endif

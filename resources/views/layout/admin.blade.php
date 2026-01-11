@@ -44,6 +44,7 @@
 
     <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
         
+
         <!--begin::App Wrapper-->
         <div class="app-wrapper">
             <!--begin::Header-->
@@ -54,6 +55,27 @@
             <!--end::Sidebar-->
             <!--begin::App Main-->
             <main class="app-main">
+               <div class="container-fluid mt-2">
+                @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong><i class="fas fa-check"></i> Success!</strong> {{ $message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @endif
+
+                @if ($message = Session::get('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong><i class="fas fa-ban"></i> Error!</strong> {{ $message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @endif
+
+            </div>
+
                 <!--begin::App Content Header-->
                 @yield('content')
                 <!--end::App Content-->
@@ -297,6 +319,20 @@
             const sparkline3 = new ApexCharts(document.querySelector('#sparkline-3'), option_sparkline3);
             sparkline3.render();
         </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $(".alert .close").click(function() {
+            $(this).parent(".alert").fadeOut();
+        });
+    });
+    </script>
         <!--end::Script-->
     </body>
     <!--end::Body-->

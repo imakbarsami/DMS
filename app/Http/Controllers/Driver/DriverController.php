@@ -62,16 +62,18 @@ class DriverController extends Controller
         }
 
         // 2. Driving License Image Upload
+        $dlDestinationPath= 'driving-licences/';
         if ($dl_image = $request->file('driving_license_img')) {
             $dlName = date('YmdHis') . "_dl." . $dl_image->getClientOriginalExtension();
-            $dl_image->move(public_path($destinationPath), $dlName);
+            $dl_image->move(public_path($dlDestinationPath), $dlName);
             $input['driving_license_img'] = $dlName;
         }
 
         // 3. NID Image Upload
+        $nidDestinationPath= 'nid/';
         if ($nid_image = $request->file('nid_img')) {
             $nidName = date('YmdHis') . "_nid." . $nid_image->getClientOriginalExtension();
-            $nid_image->move(public_path($destinationPath), $nidName);
+            $nid_image->move(public_path($nidDestinationPath), $nidName);
             $input['nid_img'] = $nidName;
         }
 

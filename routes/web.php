@@ -20,3 +20,11 @@ Route::get('/', function () {
 
 
 Route::resource('drivers', 'Driver\DriverController');
+
+// driver problem routes
+Route::get('drivers/{id}/report-problem', 'Driver\DriverProblemController@create')->name('driver-problems.create');
+Route::post('driver-problems/store', 'Driver\DriverProblemController@store')->name('driver-problems.store');
+Route::get('driver-problems/{id}', 'Driver\DriverProblemController@show')->name('driver-problems.show');
+Route::get('driver-problems/{id}/edit', 'Driver\DriverProblemController@edit')->name('driver-problems.edit');
+Route::put('driver-problems/{id}', 'Driver\DriverProblemController@update')->name('driver-problems.update');
+Route::delete('driver-problems/{id}', 'Driver\DriverProblemController@destroy')->name('driver-problems.destroy');
