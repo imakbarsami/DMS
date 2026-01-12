@@ -115,8 +115,8 @@
                                             <div class="card-header bg-light"><strong>Driving License</strong></div>
                                             <div class="card-body text-center">
                                                 @if($driver->driving_license_img)
-                                                    <a href="/images/{{ $driver->driving_license_img }}" target="_blank">
-                                                        <img src="/images/{{ $driver->driving_license_img }}" class="img-fluid" style="max-height: 200px;">
+                                                    <a href="/driving-licences/{{ $driver->driving_license_img }}" target="_blank">
+                                                        <img src="/driving-licences/{{ $driver->driving_license_img }}" class="img-fluid" style="max-height: 200px;">
                                                     </a>
                                                 @else
                                                     <span class="text-muted">Not Uploaded</span>
@@ -129,8 +129,8 @@
                                             <div class="card-header bg-light"><strong>NID Copy</strong></div>
                                             <div class="card-body text-center">
                                                 @if($driver->nid_img)
-                                                    <a href="/images/{{ $driver->nid_img }}" target="_blank">
-                                                        <img src="/images/{{ $driver->nid_img }}" class="img-fluid" style="max-height: 200px;">
+                                                    <a href="/nid/{{ $driver->nid_img }}" target="_blank">
+                                                        <img src="/nid/{{ $driver->nid_img }}" class="img-fluid" style="max-height: 200px;">
                                                     </a>
                                                 @else
                                                     <span class="text-muted">Not Uploaded</span>
